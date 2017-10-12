@@ -27,11 +27,11 @@ void loop()
     //slideStateTrue();
     port.listen();
     char input = port.read();
-    int secondInput = port.read();
     Serial.println("  " + input);
 
     if (input == 'c')
     {
+      int secondInput = port.read();
       char thirdInput = port.read();
       if(rightButton == 0)
       {
@@ -62,7 +62,8 @@ void loop()
     {
       if(leftButton == 0)
       {
-        int thirdInput = port.read();
+        int secondInput = port.read() * 100;
+        int thirdInput = port.read() * 1000;
         CircuitPlayground.playTone(secondInput,thirdInput);
         //leftButton++;
       }
@@ -91,10 +92,10 @@ void loop()
       port.write('m');
       Serial.println('m');
       //frequency
-      port.write(600);
+      port.write(6);
       Serial.println(600);
       //duration
-      port.write(1000);
+      port.write(1);
       Serial.println(1000);
     }
   }
