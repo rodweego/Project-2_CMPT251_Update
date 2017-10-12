@@ -42,9 +42,9 @@ void loop()
       else if(rightButton == 1)
       {
 
-       CircuitPlayground.clearPixels();
-      CircuitPlayground.setPixelColor(4, 000,100,0);
-      rightButton++;
+        CircuitPlayground.clearPixels();
+        CircuitPlayground.setPixelColor(4, 000,100,0);
+        rightButton++;
 
       }
       else
@@ -52,15 +52,35 @@ void loop()
         rightButton == 0;
         CircuitPlayground.clearPixels();
       }
-}
+    }
+    else if(input = 'm')
+    {
+      if(leftButton == 0)
+      {
+        
+        leftButton++;
+      }
+      else
+      {
+        
+        leftButton == 0;
+      }
+    }
   }
   else
   {
     bool right2 = CircuitPlayground.rightButton();
+    bool left2 = CircuitPlayGround.leftButton();
+    
     if (right && !right2)
     {
       port.write('c');
       Serial.println('c');
+    }
+    if (left && !left2)
+    {
+      port.write('m');
+      Serial.println('m');
     }
   }
 
