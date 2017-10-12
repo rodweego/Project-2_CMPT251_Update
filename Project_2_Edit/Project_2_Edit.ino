@@ -18,7 +18,7 @@ void loop()
 
   bool slideState = CircuitPlayground.slideSwitch();
   bool right = CircuitPlayground.rightButton();
-  bool left=CircuitPlayground.leftButton();
+  bool left =CircuitPlayground.leftButton();
   delay(20);
 
   
@@ -49,7 +49,7 @@ void loop()
       }
       else
       {
-        rightButton == 0;
+        rightButton = 0;
         CircuitPlayground.clearPixels();
       }
     }
@@ -57,20 +57,23 @@ void loop()
     {
       if(leftButton == 0)
       {
-        
+        CircuitPlayground.playTone(600,1000);
         leftButton++;
       }
+
       else
       {
-        
-        leftButton == 0;
+     
+
+        leftButton = 0;
+       
       }
     }
   }
   else
   {
     bool right2 = CircuitPlayground.rightButton();
-    bool left2 = CircuitPlayGround.leftButton();
+    bool left2 = CircuitPlayground.leftButton();
     
     if (right && !right2)
     {
